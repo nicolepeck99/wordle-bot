@@ -1,26 +1,12 @@
 # Wordle-Bot
 
-This is a basic setup of a Discord bot using the [sapphire framework][sapphire] written in TypeScript
+wordle-bot is a bot written to play the game Wordle in discord servers with your friends!
 
 ## How to use it?
 
-### Prerequisite
-
-```sh
-npm install
-```
-
-### Development
-
-This example can be run with `tsc-watch` to watch the files and automatically restart your bot.
-
-```sh
-npm run watch:start
-```
-
-### Production
-
-You can also run the bot with `npm dev`, this will first build your code and then run `node ./dist/index.js`. But this is not the recommended way to run a bot in production.
+Invite the bot to your server using this link:
+The current bot prefix is !
+Join our bot server here: 
 
 ## License
 
