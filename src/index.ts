@@ -1,5 +1,6 @@
 import "./lib/setup";
-import { LogLevel, SapphireClient } from "@sapphire/framework";
+import { container, LogLevel, SapphireClient } from "@sapphire/framework";
+import { getWordFromFile } from "./helper/getWordFromFile";
 
 const client = new SapphireClient({
     defaultPrefix: "!",
@@ -26,7 +27,9 @@ const main = async () => {
     try {
         client.logger.info("Logging in");
         await client.login();
-        client.logger.info("logged in");
+        client.logger.info("Logged in");
+        container.words = getWordFromFile();
+        client.logger.info(`Loaded ${container.words.length} words`);
     } catch (error) {
         client.logger.fatal(error);
         client.destroy();
@@ -35,3 +38,9 @@ const main = async () => {
 };
 
 main();
+
+declare module "@sapphire/pieces" {
+    interface Container {
+        words: string[];
+    }
+}

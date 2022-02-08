@@ -3,6 +3,7 @@ import { Listener, Store } from "@sapphire/framework";
 import { blue, gray, green, magenta, magentaBright, white, yellow } from "colorette";
 
 const dev = process.env.NODE_ENV !== "production";
+const version = process.env.npm_package_version ?? "0";
 
 export class UserEvent extends Listener {
     private readonly style = dev ? yellow : blue;
@@ -34,7 +35,7 @@ export class UserEvent extends Listener {
 
         console.log(
             String.raw`
-${line01} ${pad}${blc("1.0.0")}
+${line01} ${pad}${blc(version)}
 ${line02} ${pad}[${success}] Gateway
 ${line03}${dev ? ` ${pad}${blc("<")}${llc("/")}${blc(">")} ${llc("DEVELOPMENT MODE")}` : ""}
 		`.trim()
