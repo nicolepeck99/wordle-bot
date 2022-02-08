@@ -29,7 +29,7 @@ const main = async () => {
         await client.login();
         client.logger.info("Logged in");
         container.words = getWordFromFile();
-        client.logger.info("Loaded word file");
+        client.logger.info(`Loaded ${container.words.length} words`);
     } catch (error) {
         client.logger.fatal(error);
         client.destroy();
